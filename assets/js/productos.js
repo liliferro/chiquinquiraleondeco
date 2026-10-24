@@ -19,6 +19,7 @@
    ========================================================================= */
 
 window.CATEGORIAS = [
+  { id: "arboles",   nombre: "Árboles de Navidad" },
   { id: "coronas",   nombre: "Coronas" },
   { id: "centros",   nombre: "Centros de mesa y arreglos" },
   { id: "arbolitos", nombre: "Árboles de mesa y arbolitos" },
@@ -100,3 +101,14 @@ window.ARBOLES = [
   { codigo: "A-15", nombre: "De pared rojo y plata con regalos", fotos: ["a-15"], proporcion: 1.34, pared: true },
   { codigo: "A-16", nombre: "De pared rojo y blanco", fotos: ["a-16"], proporcion: 1.27, pared: true }
 ];
+
+// Los estilos también se pueden encontrar y consultar desde el catálogo.
+window.PRODUCTOS = window.ARBOLES.map(function (arbol) {
+  return Object.assign({}, arbol, {
+    categoria: "arboles",
+    nombre: "Árbol " + arbol.nombre.charAt(0).toLowerCase() + arbol.nombre.slice(1),
+    descripcion: "Decoración personalizada para tu árbol, tu espacio y tus colores." + (arbol.pared ? " El árbol de pared incluye todos los materiales." : ""),
+    personalizable: true,
+    esArbol: true
+  });
+}).concat(window.PRODUCTOS);

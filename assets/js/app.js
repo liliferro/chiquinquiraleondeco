@@ -60,15 +60,16 @@
     b.setAttribute("aria-label", "Ver en grande: " + p.nombre + ", código " + p.codigo);
     b.appendChild(img(p.fotos[0], p.nombre + ", hecho por la Sra. Elizabeth", p.proporcion));
     var bd = document.createElement("span"); bd.className = "badge badge--cod"; bd.textContent = p.codigo; b.appendChild(bd);
-    b.addEventListener("click", function () { abrirModal({ tipo: "p", item: p }); });
+    b.addEventListener("click", function () { abrirModal({ tipo: p.esArbol ? "a" : "p", item: p.esArbol ? ARBOLES.find(function (a) { return a.codigo === p.codigo; }) : p }); });
     var c = document.createElement("div"); c.className = "ficha__cuerpo";
     c.innerHTML = '<h4 class="ficha__t"></h4><p class="ficha__d"></p>';
     c.querySelector(".ficha__t").textContent = p.nombre;
     c.querySelector(".ficha__d").textContent = p.descripcion;
     if (p.personalizable) { var e = document.createElement("span"); e.className = "etq"; e.textContent = "Personalizable"; c.appendChild(e); }
     var a = document.createElement("a");
-    a.className = "btn btn--verde"; a.href = waUrl(msgProducto(p)); a.target = "_blank"; a.rel = "noopener";
+    a.className = "btn btn--verde"; a.href = waUrl(p.esArbol ? msgArbol(p) : msgProducto(p)); a.target = "_blank"; a.rel = "noopener";
     a.innerHTML = '<svg class="ic" aria-hidden="true"><use href="#i-wa"/></svg>Lo quiero';
+    if (p.esArbol) a.lastChild.textContent = "Quiero este estilo";
     a.setAttribute("aria-label", "Lo quiero: pedir " + p.codigo + " " + p.nombre + " por WhatsApp");
     c.appendChild(a);
     li.appendChild(b); li.appendChild(c);
