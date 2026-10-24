@@ -221,6 +221,7 @@ button{font:inherit;cursor:pointer}
 .sobre{display:grid;gap:34px;align-items:center}
 .sobre__foto{margin:0 auto;max-width:360px;width:100%}
 .foto-marco{background:var(--blanco);padding:9px;border:1px solid var(--linea);box-shadow:var(--sombra)}
+.foto-marco img{display:block;width:100%;height:auto}
 .foto-marco--vacio{aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;text-align:center;font:600 14px/1.6 var(--sans);color:var(--tinta);background:repeating-linear-gradient(45deg,#efe7d8 0 12px,#e8dfcd 12px 24px);border:9px solid var(--blanco);outline:1px solid var(--linea);padding:0}
 .sobre__txt{text-align:center}
 .sobre__txt p{margin:0 auto 14px;max-width:52ch}
