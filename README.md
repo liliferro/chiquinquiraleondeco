@@ -7,7 +7,7 @@ Catálogo de una sola página. Cada pieza se pide por WhatsApp y las cotizacione
 1. **Número de WhatsApp:** ya está configurado (+52 55 8009 7803) en `assets/js/config.js`. Si cambia, edítalo ahí en formato internacional, sin «+» ni espacios.
    Mientras esté vacío, WhatsApp se abre con el mensaje ya escrito, pero la persona tiene que elegir a quién mandarlo.
 2. **Imagen al compartir:** WhatsApp y Facebook necesitan la dirección completa de la imagen. Cuando tengas el dominio, cambia en `index.html` la línea `og:image` a `https://TU-DOMINIO/assets/img/og-image.jpg`.
-3. Sustituye los **[POR CONFIRMAR]** de `index.html`: anticipo, fecha límite de pedidos y entregas.
+3. Condiciones de pedido configuradas en `index.html`: anticipo del 50%, fecha límite de pedidos el 15 de diciembre y entregas en CDMX y Estado de México.
 
 ## Cómo publicarlo (cualquiera de estas opciones)
 
